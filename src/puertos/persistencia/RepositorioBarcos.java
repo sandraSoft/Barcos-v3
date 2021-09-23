@@ -21,7 +21,7 @@ public interface RepositorioBarcos {
 	public abstract boolean adicionarBarco(Barco barco);
 	
 	/**
-	 * Busca un barco en la base de datos a partir de su matrícula
+	 * Busca un barco en el repositorio a partir de su matrícula
 	 * @param matricula	el número de matrícula del barco que se desea buscar,
 	 * 			debe ser diferente de null
 	 * @return	el objeto barco con la matrícula dada, o null si no se encuentra.
