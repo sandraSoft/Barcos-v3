@@ -12,20 +12,22 @@ Funcionalidad básica: en un puerto se tiene el registro de los barcos que llega
  para poder obtener la capacidad total que maneja el puerto.
 
 *********** CAMBIOS con respecto a v2
-- Se adiciona una interfaz que ofrece los servicios para manejar la persistencia, y dos clases que la implementan.
+- Se adiciona una interfaz que ofrece los servicios para manejar la persistencia, 
+  y dos clases que la implementan.
 Se crea un nuevo paquete para esta interfaz y las clases:
   Una para "simular" la persistencia con una lista en memoria
   Una para acceso a base de datos (en este caso, SQLite)
-Cambian las clases de entidad porque se adicionan algunos métodos get que no tenían.
+Cambian las clases de entidad porque se adicionan algunos métodos get 
+ (necesarios para trabajar con la base de datos).
 Cambia la clase de control (para usar la interfaz).
 No cambia la interfaz gráfica.
 - Se adicionan como recursos adicionales para que funcione la base de datos:
-  El driver de conexión a SQLite. Se descarga el jar de: https://repo1.maven.org/maven2/org/xerial/sqlite-jdbc/
+  El driver de conexión a SQLite. Se descarga el jar de: 
+  https://repo1.maven.org/maven2/org/xerial/sqlite-jdbc/
   (la versión usada es la 3.34.0)
   La base de datos, llamada "barcos.db", tiene la tabla "Barcos":
    CREATE TABLE Barcos (matricula varchar(50) primary key, nacionalidad varchar(50),
     volumen real, pasajeros integer, liquidos boolean, tipo varchar(20) not null);
-   
    
 *********** CAMBIOS con respecto a v1
 - Se crea una nueva excepción (BarcoException) para el manejo de los errores que tienen que ver la gestión de los barcos.
