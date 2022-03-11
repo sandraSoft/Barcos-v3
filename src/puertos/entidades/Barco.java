@@ -3,8 +3,9 @@ package puertos.entidades;
 /**
  * Información de un barco que llega a un puerto,
  * y del que se desea conocer su capacidad de carga
- * @version 2.2
+ * @version 2.0
  */
+@SuppressWarnings("unused")
 public abstract class Barco {
 	private String matricula;
 	private String nacionalidad;
@@ -22,15 +23,11 @@ public abstract class Barco {
 	}
 	
 	public String getMatricula() {
-		return this.matricula;
+		return matricula;
 	}
 
 	public double getVolumen() {
-		return this.volumen;
-	}
-	
-	public String getNacionalidad() {
-		return this.nacionalidad;
+		return volumen;
 	}
 
 	/**

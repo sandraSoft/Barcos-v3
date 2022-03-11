@@ -1,28 +1,28 @@
 package puertos.gui;
 
 import java.awt.EventQueue;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import java.awt.Insets;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.ButtonGroup;
+import javax.swing.ButtonModel;
+import javax.swing.JButton;
+import javax.swing.JCheckBox;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JRadioButton;
+import javax.swing.JSeparator;
+import javax.swing.JTextField;
+import javax.swing.WindowConstants;
 import javax.swing.border.EmptyBorder;
 
 import puertos.control.BarcoException;
-import puertos.control.Puerto;
-
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-import javax.swing.JTextField;
-import javax.swing.WindowConstants;
-import javax.swing.JButton;
-import javax.swing.JSeparator;
-import java.awt.GridBagLayout;
-import java.awt.GridBagConstraints;
-import java.awt.Insets;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
-import javax.swing.JRadioButton;
-import javax.swing.JCheckBox;
-import javax.swing.ButtonGroup;
-import javax.swing.ButtonModel;
+import puertos.control.ControlPuerto;
 
 /**
  * Interfaz gráfica sencilla que permite hacer algunas operaciones
@@ -32,7 +32,7 @@ import javax.swing.ButtonModel;
  */
 public class VentanaControlBarcos extends JFrame {
 	
-	private Puerto puerto;
+	private ControlPuerto puerto;
 
 	private JPanel contentPane;
 	private JTextField campoNacionalidad;
@@ -64,7 +64,7 @@ public class VentanaControlBarcos extends JFrame {
 	 */
 	public VentanaControlBarcos() {
 		
-		puerto = new Puerto();
+		puerto = new ControlPuerto();
 		
 		setTitle("Control Barcos");
 		setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
@@ -282,7 +282,8 @@ public class VentanaControlBarcos extends JFrame {
 		boolean liquidos = checkLiquidos.isSelected();
 		
 		if (!validarCampoObligatorio(nacionalidad)) {
-			JOptionPane.showMessageDialog(this,"Se debe ingresar algún dato en nacionalidad", 
+			JOptionPane.showMessageDialog(this,
+					"Se debe ingresar algún dato en nacionalidad", 
 					"Error",JOptionPane.WARNING_MESSAGE);
 		}
 		
