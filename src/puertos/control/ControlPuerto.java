@@ -8,6 +8,12 @@ import puertos.entidades.Velero;
 import puertos.persistencia.ListaBarcos;
 import puertos.persistencia.RepositorioBarcos;
 
+/**
+ * Clase donde se registran los barcos que llegan al puerto, y tiene la
+ * principales funciones del programa (lógica el negocio).
+ * 
+ * @version 4.0
+ */
 public class ControlPuerto {
 
 	private RepositorioBarcos repositorio;
